@@ -13,5 +13,7 @@ RUN apk update && apk add nginx
 # Expose Lavalink and nginx ports
 EXPOSE 80
 
+RUN wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar
+
 # Start both Lavalink and nginx
 CMD sh -c "nginx && java -jar Lavalink.jar"
