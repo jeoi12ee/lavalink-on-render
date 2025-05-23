@@ -22,3 +22,4 @@ plugins:
     clientId: "88a3b988c704472d87f34122e2ad16cc"
     clientSecret: "5a71fc67626c40e695d2b6f5323772a3"
     countryCode: "US"
+  - plugin: dev.lavalink.plugins.yt.YtDlpPlugin
