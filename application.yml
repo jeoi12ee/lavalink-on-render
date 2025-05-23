@@ -13,15 +13,13 @@ lavalink:
       vimeo: true
       http: true
       local: false
-    clientResuming:
+    client-resuming:
       enabled: false
-    playerUpdateInterval: 5
+    player-update-interval: 5
 
 plugins:
-  - dependency: "com.github.topi314.lavalink-spotify-plugin:spotify-plugin:master"
-    configuration:
-      clientId: "88a3b988c704472d87f34122e2ad16cc"
-      clientSecret: "5a71fc67626c40e695d2b6f5323772a3"
-      countryCode: "US"
-
-  - dependency: "dev.lavalink.plugins.yt:yt-dlp-plugin:master"
+  - plugin: com.github.topi314.lavalink.spotify.SpotifyPlugin
+    clientId: "88a3b988c704472d87f34122e2ad16cc"
+    clientSecret: "5a71fc67626c40e695d2b6f5323772a3"
+    countryCode: "US"
+  - plugin: dev.lavalink.plugins.yt.YtDlpPlugin
