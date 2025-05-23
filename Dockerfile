@@ -1,19 +1,5 @@
-FROM openjdk:17-alpine
+FROM ghcr.io/lavalink-devs/lavalink:4
 
-WORKDIR /app
+COPY application.yml /opt/Lavalink/application.yml
 
-# Copy Lavalink and config
-COPY Lavalink.jar .
-COPY application.yml .
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Install nginx
-RUN apk update && apk add nginx
-
-# Expose Lavalink and nginx ports
-EXPOSE 80
-
-RUN wget https://github.com/freyacodes/Lavalink/releases/latest/download/Lavalink.jar
-
-# Start both Lavalink and nginx
-CMD sh -c "nginx && java -jar Lavalink.jar"
+ENV _JAVA_OPTIONS="-Xmx2G"
